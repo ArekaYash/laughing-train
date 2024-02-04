@@ -29,7 +29,7 @@ document.addEventListener("keydown", function (event) {
 var password = document.getElementById("password");
 
 function genPassword() {
-  resetCopyButton()
+  resetCopyButton();
   var chars =
     "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var passwordLength = 10;
