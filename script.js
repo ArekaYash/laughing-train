@@ -29,6 +29,7 @@ document.addEventListener("keydown", function (event) {
 var password = document.getElementById("password");
 
 function genPassword() {
+  resetCopyButton()
   var chars =
     "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var passwordLength = 10;
@@ -42,7 +43,23 @@ function genPassword() {
 
 document.getElementById("password").value = password;
 
-function copyPassword() {
+async function copyPassword() {
+  
+  copyPassword1();
+  copyPassword2();
+}
+
+async function copyPassword1() {
+  const copyButton = document.getElementById("button");
+  copyButton.innerHTML = "Copied!";
+}
+
+async function copyPassword2() {
   var copyText = document.getElementById("password");
   navigator.clipboard.writeText(copyText.value);
+}
+
+async function resetCopyButton() {
+  const copyButton = document.getElementById("button");
+  copyButton.innerHTML = "Copy";
 }
