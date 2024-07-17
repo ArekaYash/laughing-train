@@ -8,27 +8,58 @@
     <title>Pass</title>
   </head>
   <body>
-    <h1>Password Generator</h1>
+    <h1>(: Password :)</h1>
 
-    <button class="open-modal" onclick="genPassword()">Generate</button>
+    <div class="button-container">
+      <button class="button openModal" onclick="genPassword()">Generate</button>
+      <button class="button openModal2" onclick="testStrength()">
+        Test Strength
+      </button>
+    </div>
 
-    <div class="modal-content hidden-modal">
-      <div class="modal-header">
-        <button class="close-modal">&times;</button>
+    <div class="modalContent hiddenModal" id="passwordModal">
+      <div class="modalHeader">
+        <button class="closeModal">&times;</button>
       </div>
-
-      <div class="modal-body">
+      <div class="modalBody">
         <table>
           <input type="text" name="" id="password" readonly />
           <th>
             <button class="btn1" onclick="genPassword()">Another</button>
-            <a id="button" class="btn2" onclick="copyPassword()"
-              ><span>Copy</span></a
-            >
+            <a id="button" class="btn2" onclick="copyPassword()">
+              <span>Copy</span>
+            </a>
           </th>
         </table>
       </div>
     </div>
+
+    <div class="modalContent hiddenModal" id="strengthModal">
+      <div class="modalHeader">
+        <button class="closeModal">&times;</button>
+      </div>
+      <div class="modalBody">
+        <table>
+          <input
+            type="text"
+            name=""
+            id="strengthPassword"
+            placeholder="Enter Password..."
+          />
+          <th>
+            <button class="btn1" onclick="checkStrength()">Test</button>
+          </th>
+        </table>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>~ Made by me (Yashvardhan)</p>
+      <p class="small">
+        with help from the internet, Youtube, ChatGPT and a little of my own
+        brain
+      </p>
+    </footer>
 
     <div class="blur-bg hidden-blur"></div>
     <script src="script.js"></script>
